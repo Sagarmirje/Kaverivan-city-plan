@@ -3,219 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bellman-Ford Algorithm Use Cases</title>
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Bellman-Ford Algorithm</title>
     <style>
         /* General Styling */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 20px;
-            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+            background: linear-gradient(to right, #89f7fe, #66a6ff);
             color: #333;
         }
 
         h1 {
             text-align: center;
-            color: #4a0072;
+            color: #003366;
             animation: fadeIn 2s;
-            position: relative;
             margin-bottom: 30px;
         }
 
-        h1:before {
-            content: '\f542';
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            color: #4a0072;
-            margin-right: 10px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        th, td {
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
             padding: 15px;
-            text-align: left;
-            vertical-align: middle;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        th {
-            background-color: #4a0072;
+        button {
+            display: block;
+            margin: 30px auto;
+            background-color: #003366;
             color: white;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        td:first-child {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        td i {
-            margin-right: 10px;
-            font-size: 18px;
-        }
-
-        /* Hover Effect for Rows */
-        tr {
-            transition: background-color 0.3s ease, border 0.3s ease;
-        }
-
-        tr:hover {
-            background-color: #d1b0e7;
-            cursor: pointer;
-            border: 2px solid #4a0072;
-        }
-
-        .view-button {
-            background-color: #4a0072;
-            color: white;
-            text-decoration: none;
+            border: none;
             padding: 10px 20px;
             border-radius: 20px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .view-button:hover {
-            background-color: #300046;
+        button:hover {
+            background-color: #001f4d;
             transform: scale(1.1);
         }
 
-        .view-button i {
-            transition: transform 0.3s ease;
+        /* Media Queries */
+        @media (max-width: 768px) {
+            body {
+                margin: 10px;
+            }
+
+            pre {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
         }
 
-        .view-button:hover i {
-            transform: rotate(15deg);
-        }
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+                margin: 5px;
+            }
 
-        .next-page-btn {
-            text-align: center;
-            margin-top: 20px;
-        }
+            h1 {
+                font-size: 20px;
+            }
 
-        .next-page-btn .next-button {
-            background-color: #4a0072;
-            color: white;
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
+            pre {
+                font-size: 12px;
+                padding: 8px;
+            }
 
-        .next-page-btn .next-button:hover {
-            background-color: #300046;
-            transform: scale(1.1);
-        }
-
-        .next-page-btn .next-button i {
-            transition: transform 0.3s ease;
-        }
-
-        .next-page-btn .next-button:hover i {
-            transform: translateX(5px);
+            button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
 
-<h1>Bellman-Ford Algorithm Use Cases</h1>
+<h1>Bellman-Ford Algorithm</h1>
 
-<table>
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Algorithm</th>
-            <th>Use Case</th>
-            <th>Related SDGs</th>
-            <th>View Code</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <i class="fas fa-road"></i>
-                <strong>Traffic Routing</strong>
-            </td>
-            <td>Bellman-Ford Algorithm</td>
-            <td>Optimizing traffic flow by finding shortest paths with negative weights.</td>
-            <td>
-                <ul>
-                    <li><strong>SDG 9:</strong> Industry, Innovation, and Infrastructure</li>
-                    <li><strong>SDG 11:</strong> Sustainable Cities and Communities</li>
-                </ul>
-            </td>
-            <td>
-                <a href="Sagar/Bellman-Ford.html" class="view-button">
-                    <i class="fas fa-code"></i> View Code
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <i class="fas fa-money-bill-wave"></i>
-                <strong>Financial Risk Analysis</strong>
-            </td>
-            <td>Bellman-Ford Algorithm</td>
-            <td>Detecting arbitrage opportunities in currency exchange rates.</td>
-            <td>
-                <ul>
-                    <li><strong>SDG 8:</strong> Decent Work and Economic Growth</li>
-                </ul>
-            </td>
-            <td>
-                <a href="Sagar/Bellman-Ford-Finance.html" class="view-button">
-                    <i class="fas fa-code"></i> View Code
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <i class="fas fa-signal"></i>
-                <strong>Network Optimization</strong>
-            </td>
-            <td>Bellman-Ford Algorithm</td>
-            <td>Finding optimal paths in telecommunication networks.</td>
-            <td>
-                <ul>
-                    <li><strong>SDG 9:</strong> Industry, Innovation, and Infrastructure</li>
-                </ul>
-            </td>
-            <td>
-                <a href="Sagar/Bellman-Ford-Network.html" class="view-button">
-                    <i class="fas fa-code"></i> View Code
-                </a>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<pre>
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
 
-<div class="next-page-btn">
-    <a href="next-page.html" class="next-button">
-        <i class="fas fa-arrow-right"></i> Next Page
-    </a>
-</div>
+struct Edge {
+    int src, dest, weight;
+};
+
+class BellmanFord {
+private:
+    int V, E;
+    vector<Edge> edges;
+
+public:
+    BellmanFord(int vertices, int edgesCount) {
+        V = vertices;
+        E = edgesCount;
+        edges.resize(E);
+    }
+
+    void addEdge(int index, int src, int dest, int weight) {
+        edges[index] = {src, dest, weight};
+    }
+
+    void run(int src) {
+        vector<int> dist(V, INT_MAX);
+        dist[src] = 0;
+
+        for (int i = 1; i <= V - 1; i++) {
+            for (int j = 0; j < E; j++) {
+                int u = edges[j].src;
+                int v = edges[j].dest;
+                int weight = edges[j].weight;
+                if (dist[u] != INT_MAX && dist[u] + weight < dist[v]) {
+                    dist[v] = dist[u] + weight;
+                }
+            }
+        }
+
+        for (int i = 0; i < E; i++) {
+            int u = edges[i].src;
+            int v = edges[i].dest;
+            int weight = edges[i].weight;
+            if (dist[u] != INT_MAX && dist[u] + weight < dist[v]) {
+                cout &lt;&lt; "Graph contains negative weight cycle" &lt;&lt; endl;
+                return;
+            }
+        }
+
+        cout &lt;&lt; "Vertex Distance from Source" &lt;&lt; endl;
+        for (int i = 0; i < V; i++) {
+            cout &lt;&lt; i &lt;&lt; "\t" &lt;&lt; dist[i] &lt;&lt; endl;
+        }
+    }
+};
+
+int main() {
+    int V = 5;
+    int E = 8;
+    BellmanFord bf(V, E);
+
+    bf.addEdge(0, 0, 1, -1);
+    bf.addEdge(1, 0, 2, 4);
+    bf.addEdge(2, 1, 2, 3);
+    bf.addEdge(3, 1, 3, 2);
+    bf.addEdge(4, 1, 4, 2);
+    bf.addEdge(5, 3, 2, 5);
+    bf.addEdge(6, 3, 1, 1);
+    bf.addEdge(7, 4, 3, -3);
+
+    bf.run(0);
+
+    return 0;
+}
+</pre>
 
 </body>
 </html>
-
