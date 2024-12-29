@@ -1,1 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bellman-Ford Algorithm Use Cases</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4a0072;
+            animation: fadeIn 2s;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        h1:before {
+            content: '\f542';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #4a0072;
+            margin-right: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #4a0072;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        td:first-child {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        td i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        /* Hover Effect for Rows */
+        tr {
+            transition: background-color 0.3s ease, border 0.3s ease;
+        }
+
+        tr:hover {
+            background-color: #d1b0e7;
+            cursor: pointer;
+            border: 2px solid #4a0072;
+        }
+
+        .view-button {
+            background-color: #4a0072;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .view-button:hover {
+            background-color: #300046;
+            transform: scale(1.1);
+        }
+
+        .view-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .view-button:hover i {
+            transform: rotate(15deg);
+        }
+
+        .next-page-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .next-page-btn .next-button {
+            background-color: #4a0072;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .next-page-btn .next-button:hover {
+            background-color: #300046;
+            transform: scale(1.1);
+        }
+
+        .next-page-btn .next-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .next-page-btn .next-button:hover i {
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+
+<h1>Bellman-Ford Algorithm Use Cases</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Algorithm</th>
+            <th>Use Case</th>
+            <th>Related SDGs</th>
+            <th>View Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <i class="fas fa-road"></i>
+                <strong>Traffic Routing</strong>
+            </td>
+            <td>Bellman-Ford Algorithm</td>
+            <td>Optimizing traffic flow by finding shortest paths with negative weights.</td>
+            <td>
+                <ul>
+                    <li><strong>SDG 9:</strong> Industry, Innovation, and Infrastructure</li>
+                    <li><strong>SDG 11:</strong> Sustainable Cities and Communities</li>
+                </ul>
+            </td>
+            <td>
+                <a href="Sagar/Bellman-Ford.html" class="view-button">
+                    <i class="fas fa-code"></i> View Code
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fas fa-money-bill-wave"></i>
+                <strong>Financial Risk Analysis</strong>
+            </td>
+            <td>Bellman-Ford Algorithm</td>
+            <td>Detecting arbitrage opportunities in currency exchange rates.</td>
+            <td>
+                <ul>
+                    <li><strong>SDG 8:</strong> Decent Work and Economic Growth</li>
+                </ul>
+            </td>
+            <td>
+                <a href="Sagar/Bellman-Ford-Finance.html" class="view-button">
+                    <i class="fas fa-code"></i> View Code
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fas fa-signal"></i>
+                <strong>Network Optimization</strong>
+            </td>
+            <td>Bellman-Ford Algorithm</td>
+            <td>Finding optimal paths in telecommunication networks.</td>
+            <td>
+                <ul>
+                    <li><strong>SDG 9:</strong> Industry, Innovation, and Infrastructure</li>
+                </ul>
+            </td>
+            <td>
+                <a href="Sagar/Bellman-Ford-Network.html" class="view-button">
+                    <i class="fas fa-code"></i> View Code
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="next-page-btn">
+    <a href="next-page.html" class="next-button">
+        <i class="fas fa-arrow-right"></i> Next Page
+    </a>
+</div>
+
+</body>
+</html>
 
