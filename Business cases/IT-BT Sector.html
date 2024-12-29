@@ -45,56 +45,97 @@
         th, td {
             padding: 15px;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            vertical-align: middle;
         }
 
         th {
             background-color: #4a0072;
             color: white;
             text-transform: uppercase;
+            font-weight: bold;
         }
 
         td:first-child {
-            display: flex;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        td i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        /* Hover Effect for Table Rows */
+        tr {
+            transition: background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        tr:hover {
+            background-color: #d1b0e7;
+            cursor: pointer;
+            border: 2px solid #4a0072;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Updated "View Code" Button Styling */
+        .view-button {
+            background-color: #4a0072;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .view-button:hover {
+            background-color: #300046;
+            transform: scale(1.1); /* Slight zoom effect */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow increase on hover */
+        }
+
+        .view-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .view-button:hover i {
+            transform: rotate(15deg); /* Rotate icon slightly on hover */
+        }
+
+        /* Next Page Button Styling */
+        .next-button {
+            display: inline-block;
+            background-color: #4a0072;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: inline-flex;
             align-items: center;
             gap: 10px;
         }
 
-        tr:hover {
-            background-color: #f0d7ff;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button {
-            background-color: #4a0072;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        button:hover {
+        .next-button:hover {
             background-color: #300046;
-            transform: scale(1.1);
+            transform: scale(1.1); /* Slight zoom effect */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow increase on hover */
         }
 
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
+        .next-button i {
+            transition: transform 0.3s ease;
         }
 
-        .next-page-btn {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
+        .next-button:hover i {
+            transform: translateX(5px); /* Slide arrow icon to the right */
         }
 
         /* Media Queries */
@@ -110,11 +151,6 @@
 
             th, td {
                 padding: 10px;
-            }
-
-            button {
-                padding: 8px 16px;
-                font-size: 14px;
             }
         }
 
@@ -134,11 +170,6 @@
 
             th, td {
                 padding: 8px;
-            }
-
-            button {
-                padding: 6px 12px;
-                font-size: 12px;
             }
         }
     </style>
@@ -172,9 +203,9 @@
                 </ul>
             </td>
             <td>
-                <button><a href="Sagar/Dijkstra Algorithm.html"></a>
+                <a href="Sagar/Dijkstra Algorithm.html" class="view-button">
                     <i class="fas fa-code"></i> View Code
-                </button>
+                </a>
             </td>
         </tr>
         <tr>
@@ -190,9 +221,9 @@
                 </ul>
             </td>
             <td>
-                <button onclick="window.location.href='avl_tree_code.html'">
+                <a href="avl_tree_code.html" class="view-button">
                     <i class="fas fa-code"></i> View Code
-                </button>
+                </a>
             </td>
         </tr>
         <tr>
@@ -208,9 +239,9 @@
                 </ul>
             </td>
             <td>
-                <button><a href="Sagar/KMP String Matching.html"></a>
+                <a href="Sagar/KMP String Matching.html" class="view-button">
                     <i class="fas fa-code"></i> View Code
-                </button>
+                </a>
             </td>
         </tr>
         <tr>
@@ -226,9 +257,9 @@
                 </ul>
             </td>
             <td>
-                <button><a href="https://sagarmirje.github.io/Kaverivan-city-plan/Sagar/Segment Tree.html">
-                    <i class="fas fa-code"></i> View Code</a>
-                </button>
+                <a href="Sagar/Segment Tree.html" class="view-button">
+                    <i class="fas fa-code"></i> View Code
+                </a>
             </td>
         </tr>
         <tr>
@@ -245,9 +276,9 @@
                 </ul>
             </td>
             <td>
-                <button><a href="Kruskal's Algorithm Code.html"></a>
+                <a href="Kruskal's Algorithm Code.html" class="view-button">
                     <i class="fas fa-code"></i> View Code
-                </button>
+                </a>
             </td>
         </tr>
         <tr>
@@ -263,19 +294,20 @@
                 </ul>
             </td>
             <td>
-                <button><a href="Sagar/Hash Maps.html"></a>
+                <a href="Sagar/Hash Maps.html" class="view-button">
                     <i class="fas fa-code"></i> View Code
-                </button>
+                </a>
             </td>
         </tr>
     </tbody>
 </table>
 
-<div class="next-page-btn">
-    <button><a href="Business cases/water management.html"></a>
-        <i class="fas fa-arrow-right"></i> View Next Page
-    </button>
+<div class="next-page-btn" style="text-align: center; margin-top: 20px;">
+    <a href="next_page.html" class="next-button">
+        <i class="fas fa-arrow-right"></i> Next Page
+    </a>
 </div>
 
 </body>
 </html>
+
