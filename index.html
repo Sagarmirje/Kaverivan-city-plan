@@ -6,41 +6,257 @@
     <title>Buttons with Links</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 20px;
-            background: linear-gradient(to right, #89f7fe, #66a6ff);
+            background: linear-gradient(to bottom right, #4facfe, #00f2fe);
             color: #333;
+            overflow-x: hidden;
         }
 
         h1 {
             text-align: center;
             color: #003366;
             margin-bottom: 30px;
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: fadeInDown 1.5s;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            animation: fadeIn 2s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animation-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px 0;
+            height: 300px;
+            position: relative;
+        }
+
+        .animation-box {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: rotate 4s linear infinite;
+        }
+
+        .laptop-icon-container {
+            width: 80px;
+            height: 80px;
+            background-color: #003366; /* Dark color for contrast */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .laptop-icon {
+            width: 50px;
+            height: 50px;
+            fill: #ffffff; /* White color for the laptop SVG */
+            animation: rotateLaptop 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotateLaptop {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         button {
-            display: block;
-            margin: 20px auto;
             background-color: #003366;
             color: white;
             border: none;
-            padding: 15px 30px;
-            border-radius: 20px;
+            padding: 18px 35px;
+            border-radius: 30px;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            font-size: 16px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            width: 220px;
+            text-align: center;
         }
 
         button:hover {
             background-color: #001f4d;
-            transform: scale(1.1);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
         }
 
-        a {
+        button a {
             color: white;
             text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        button a:hover {
+            text-decoration: none;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #666;
+            animation: fadeInUp 1.5s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .credits {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        /* Media Queries */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            .button-container {
+                gap: 20px;
+            }
+
+            button {
+                padding: 14px 28px;
+                font-size: 16px;
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            button {
+                padding: 12px 25px;
+                font-size: 14px;
+                width: 170px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .button-container {
+                gap: 20px;
+            }
+
+            .animation-section {
+                height: 200px;
+            }
+
+            .animation-box {
+                width: 150px;
+                height: 150px;
+            }
+
+            .laptop-icon-container {
+                width: 60px;
+                height: 60px;
+            }
+
+            .laptop-icon {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            button {
+                padding: 10px 20px;
+                font-size: 12px;
+                width: 140px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .button-container {
+                gap: 15px;
+            }
+
+            .animation-section {
+                height: 150px;
+            }
+
+            .animation-box {
+                width: 100px;
+                height: 100px;
+            }
+
+            .laptop-icon-container {
+                width: 50px;
+                height: 50px;
+            }
+
+            .laptop-icon {
+                width: 30px;
+                height: 30px;
+            }
         }
     </style>
 </head>
@@ -48,15 +264,333 @@
 
 <h1>Explore the Sections</h1>
 
-<!-- Portfolio Button -->
-<button><a href="portfolio.html" target="_blank">Portfolio</a></button>
+<div class="button-container">
+    <!-- Portfolio Button -->
+    <button><a href="portfolio.html" target="_blank">Portfolio</a></button>
 
-<!-- Water Management Button -->
-<button><a href="Business cases/water management.html" target="_blank">Water Management</a></button>
+    <!-- Water Management Button -->
+    <button><a href="https://github.com/Sagarmirje/Kaverivan-city-plan.github.io">Github repository</a></button>
 
-<!-- IT/BT Sector Button -->
-<button><a href="Business cases/IT-BT Sector.html" target="_blank">IT/BT Sector</a></button>
-    <button><a href="cource reflection.html" target="_blank">Cource reflection</a></button>
+    <!-- IT/BT Sector Button -->
+    <button><a href="Business cases/IT-BT Sector.html" target="_blank">Business Case</a></button>
+
+    <!-- Course Reflection Button -->
+    <button><a href="cource reflection.html" target="_blank">Course Reflection</a></button>
+</div>
+
+<div class="animation-section">
+    <div class="animation-box">
+        <div class="laptop-icon-container">
+            <!-- SVG Laptop Icon -->
+            <svg class="laptop-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M4 5h16v11H4V5zm-1 13h18v2H3v-2zM2 4v13h20V4H2z"/>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Sagar Mirje. All Rights Reserved.</p>
+    <p class="credits">Designed with ♥ by Sagar</p>
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons with Links</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background: linear-gradient(to bottom right, #4facfe, #00f2fe);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            color: #003366;
+            margin-bottom: 30px;
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: fadeInDown 1.5s;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            animation: fadeIn 2s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animation-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px 0;
+            height: 300px;
+            position: relative;
+        }
+
+        .animation-box {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: rotate 4s linear infinite;
+        }
+
+        .laptop-icon-container {
+            width: 80px;
+            height: 80px;
+            background-color: #003366; /* Dark color for contrast */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .laptop-icon {
+            width: 50px;
+            height: 50px;
+            fill: #ffffff; /* White color for the laptop SVG */
+            animation: rotateLaptop 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotateLaptop {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            width: 220px;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: #001f4d;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        button a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        button a:hover {
+            text-decoration: none;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #666;
+            animation: fadeInUp 1.5s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .credits {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        /* Media Queries */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            .button-container {
+                gap: 20px;
+            }
+
+            button {
+                padding: 14px 28px;
+                font-size: 16px;
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            button {
+                padding: 12px 25px;
+                font-size: 14px;
+                width: 170px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .button-container {
+                gap: 20px;
+            }
+
+            .animation-section {
+                height: 200px;
+            }
+
+            .animation-box {
+                width: 150px;
+                height: 150px;
+            }
+
+            .laptop-icon-container {
+                width: 60px;
+                height: 60px;
+            }
+
+            .laptop-icon {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            button {
+                padding: 10px 20px;
+                font-size: 12px;
+                width: 140px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .button-container {
+                gap: 15px;
+            }
+
+            .animation-section {
+                height: 150px;
+            }
+
+            .animation-box {
+                width: 100px;
+                height: 100px;
+            }
+
+            .laptop-icon-container {
+                width: 50px;
+                height: 50px;
+            }
+
+            .laptop-icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Explore the Sections</h1>
+
+<div class="button-container">
+    <!-- Portfolio Button -->
+    <button><a href="portfolio.html" target="_blank">Portfolio</a></button>
+
+    <!-- Water Management Button -->
+    <button><a href="Business cases/water management.html" target="_blank">Water Management</a></button>
+
+    <!-- IT/BT Sector Button -->
+    <button><a href="Business cases/IT-BT Sector.html" target="_blank">IT/BT Sector</a></button>
+
+    <!-- Course Reflection Button -->
+    <button><a href="cource reflection.html" target="_blank">Course Reflection</a></button>
+</div>
+
+<div class="animation-section">
+    <div class="animation-box">
+        <div class="laptop-icon-container">
+            <!-- SVG Laptop Icon -->
+            <svg class="laptop-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M4 5h16v11H4V5zm-1 13h18v2H3v-2zM2 4v13h20V4H2z"/>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Sagar Mirje. All Rights Reserved.</p>
+    <p class="credits">Designed with ♥ by Sagar</p>
+</footer>
 
 </body>
 </html>
