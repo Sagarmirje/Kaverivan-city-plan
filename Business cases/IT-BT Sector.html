@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT/BT Sector Management in Tech City</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4a0072;
+            animation: fadeIn 2s;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        h1:before {
+            content: '\f0e8';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #4a0072;
+            margin-right: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4a0072;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        td:first-child {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        tr:hover {
+            background-color: #f0d7ff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button {
+            background-color: #4a0072;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        button:hover {
+            background-color: #300046;
+            transform: scale(1.1);
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .next-page-btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            body {
+                margin: 10px;
+            }
+
+            table {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+                margin: 5px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+
+            button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>IT/BT Sector Management in Tech City</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Algorithm/Data Structure</th>
+            <th>Use Case</th>
+            <th>Related SDGs</th>
+            <th>View Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <i class="fas fa-network-wired"></i>
+                <strong>Optimizing Network Infrastructure</strong>
+            </td>
+            <td>Dijkstra's Algorithm</td>
+            <td>Efficient routing of data in IT networks to minimize latency.</td>
+            <td>
+                <ul>
+                    <li><strong>SDG 9:</strong> Industry, Innovation, and Infrastructure</li>
+                    <li><strong>SDG 11:</strong> Sustainable Cities and Communities</li>
+                </ul>
+            </td>
+            <td>
+                <button onclick="window.location.href='dijkstra_code.html'">
+                    <i class="fas fa-code"></i> View Code
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fas fa-search"></i>
+                <strong>Resource Allocation</strong>
+            </td>
+            <td>AVL Trees</td>
+            <td>Efficient storage and retrieval of server resources in IT systems.</td>
+            <td>
+                <ul>
+                    <li><strong>SDG 9:</strong> Industry, Innovation, and Infrastructure</li>
+                </ul>
+            </td>
+            <td>
+                <button onclick="window.location.href='avl_tree_code.html'">
+                    <i class="fas fa-code"></i> View Code
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fas fa-robot"></i>
+                <strong>AI for Job Matching</strong>
+            </td>
+            <td>KMP String Matching</td>
+            <td>Efficiently matching job seekers with relevant IT opportunities.</td>
+            <td>
+                <ul>
+                    <li><strong>SDG 8:</strong> Decent Work and Economic Growth</li>
+                </ul>
+            </td>
+            <td>
+                <button onclick="window.location.href='kmp_code.html'">
+                    <i class="fas fa-code"></i> View Code
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fas fa-chart-line"></i>
+                <strong>Demand Prediction</strong>
+            </td>
+            <td>Segment Trees</td>
+            <td>Forecasting IT service demand in urban areas.</td>
+            <td>
+                <ul>
+                    <li><strong>SDG 11:</strong> Sustainable Cities and Communities</li>
+                </ul>
+            </td>
+            <td>
+                <button onclick="window.location.href='segment_tree_code.html'">
+                    <i class="fas fa-code"></i> View Code
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fas fa-recycle"></i>
+                <strong>Startup Collaboration</strong>
+            </td>
+            <td>Kruskal's Algorithm</td>
+            <td>Connecting IT startups through optimized collaborative networks.</td>
+            <td>
+                <ul>
+                    <li><strong>SDG 9:</strong> Industry, Innovation, and Infrastructure</li>
+                    <li><strong>SDG 17:</strong> Partnerships for the Goals</li>
+                </ul>
+            </td>
+            <td>
+                <button onclick="window.location.href='kruskal_code.html'">
+                    <i class="fas fa-code"></i> View Code
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fas fa-database"></i>
+                <strong>Data Storage Optimization</strong>
+            </td>
+            <td>HashMaps</td>
+            <td>Efficient data retrieval for large-scale IT systems.</td>
+            <td>
+                <ul>
+                    <li><strong>SDG 9:</strong> Industry, Innovation, and Infrastructure</li>
+                </ul>
+            </td>
+            <td>
+                <button onclick="window.location.href='hashmap_code.html'">
+                    <i class="fas fa-code"></i> View Code
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="next-page-btn">
+    <button onclick="window.location.href='#'">
+        <i class="fas fa-arrow-right"></i> View Next Page
+    </button>
+</div>
+
+</body>
+</html>
