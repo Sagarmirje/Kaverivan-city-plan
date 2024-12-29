@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Map Algorithm Code</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background: linear-gradient(to right, #89f7fe, #66a6ff);
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #003366;
+            animation: fadeIn 2s;
+            margin-bottom: 30px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            display: block;
+            margin: 30px auto;
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #001f4d;
+            transform: scale(1.1);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            body {
+                margin: 10px;
+            }
+
+            pre {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+                margin: 5px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            pre {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Hash Map Algorithm Code</h1>
+
+<pre>
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class HashMap {
+private:
+    vector<pair<int, string>> table;
+    int capacity;
+
+    int hashFunction(int key) {
+        return key % capacity;
+    }
+
+public:
+    HashMap(int cap) {
+        capacity = cap;
+        table.resize(capacity);
+    }
+
+    void insert(int key, string value) {
+        int index = hashFunction(key);
+
+        // Handle collisions using linear probing
+        while (table[index].first != 0 && table[index].first != key) {
+            index = (index + 1) % capacity;
+        }
+
+        table[index] = make_pair(key, value);
+    }
+
+    string get(int key) {
+        int index = hashFunction(key);
+
+        // Handle collisions using linear probing
+        while (table[index].first != 0) {
+            if (table[index].first == key) {
+                return table[index].second;
+            }
+            index = (index + 1) % capacity;
+        }
+
+        return "Key not found";
+    }
+
+    void remove(int key) {
+        int index = hashFunction(key);
+
+        // Handle collisions using linear probing
+        while (table[index].first != 0) {
+            if (table[index].first == key) {
+                table[index] = make_pair(0, "");
+                return;
+            }
+            index = (index + 1) % capacity;
+        }
+    }
+
+    bool contains(int key) {
+        int index = hashFunction(key);
+
+        // Handle collisions using linear probing
+        while (table[index].first != 0) {
+            if (table[index].first == key) {
+                return true;
+            }
+            index = (index + 1) % capacity;
+        }
+
+        return false;
+    }
+};
+
+int main() {
+    HashMap map(10);
+
+    map.insert(1, "Apple");
+    map.insert(2, "Banana");
+    map.insert(12, "Cherry");
+
+    cout &lt;&lt; "Key 1: " &lt;&lt; map.get(1) &lt;&lt; endl;
+    cout &lt;&lt; "Key 2: " &lt;&lt; map.get(2) &lt;&lt; endl;
+    cout &lt;&lt; "Key 12: " &lt;&lt; map.get(12) &lt;&lt; endl;
+
+    map.remove(2);
+
+    cout &lt;&lt; "Contains Key 2? " &lt;&lt; (map.contains(2) ? "Yes" : "No") &lt;&lt; endl;
+
+    return 0;
+}
+</pre>
+
+</body>
+</html>
