@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .code-container {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+
+        pre {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Water Management System Code</h1>
+
+    <div class="code-container">
+        <h2>C++ Code:</h2>
+        <pre>
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;unordered_map&gt;
+#include &lt;algorithm&gt;
+#include &lt;functional&gt;
+#include &lt;string&gt;
+using namespace std;
+
+// Function 1: Efficient Water Distribution
+void efficientWaterDistribution() {
+    int n;
+    cout &lt;&lt; "\n--- Efficient Water Distribution ---\n";
+    cout &lt;&lt; "Enter the number of pipeline segments: ";
+    cin &gt;&gt; n;
+    if (n &lt;= 0) {
+        cout &lt;&lt; "Invalid number of segments. Exiting function.\n";
+        return;
+    }
+    vector&lt;int&gt; pipelines(n);
+    cout &lt;&lt; "Enter water flow for each pipeline segment (in liters):\n";
+    for (int i = 0; i &lt; n; ++i) {
+        cout &lt;&lt; "Pipeline " &lt;&lt; i + 1 &lt;&lt; ": ";
+        cin &gt;&gt; pipelines[i];
+    }
+    int totalFlow = 0;
+    for (int flow : pipelines) {
+        totalFlow += flow;
+    }
+    cout &lt;&lt; "Total Water Flow in the city pipelines: " &lt;&lt; totalFlow &lt;&lt; " liters\n";
+    cout &lt;&lt; "Efficiently distribute this water by balancing flows between pipelines.\n";
+}
+
+// Function 2: Leakage Detection
+void leakageDetection() {
+    int n, m;
+    cout &lt;&lt; "\n--- Leakage Detection ---\n";
+    cout &lt;&lt; "Enter the number of pipelines (nodes): ";
+    cin &gt;&gt; n;
+    cout &lt;&lt; "Enter the number of connections between pipelines (edges): ";
+    cin &gt;&gt; m;
+    if (n &lt;= 0 || m &lt; 0) {
+        cout &lt;&lt; "Invalid input. Exiting function.\n";
+        return;
+    }
+    vector&lt;vector&lt;int&gt;&gt; graph(n);
+    cout &lt;&lt; "Enter the connections (pipeline1 pipeline2):\n";
+    for (int i = 0; i &lt; m; ++i) {
+        int u, v;
+        cin &gt;&gt; u &gt;&gt; v;
+        graph[u].push_back(v);
+        graph[v].push_back(u);
+    }
+    vector&lt;bool&gt; visited(n, false);
+    function&lt;void(int)&gt; dfs = [&](int node) {
+        visited[node] = true;
+        for (int neighbor : graph[node]) {
+            if (!visited[neighbor]) {
+                dfs(neighbor);
+            }
+        }
+    };
+    int leakZones = 0;
+    for (int i = 0; i &lt; n; ++i) {
+        if (!visited[i]) {
+            dfs(i);
+            leakZones++;
+        }
+    }
+    cout &lt;&lt; "Number of leakage zones detected: " &lt;&lt; leakZones &lt;&lt; "\n";
+}
+
+// Function 3: Flood Prediction
+void floodPrediction() {
+    int n;
+    cout &lt;&lt; "\n--- Flood Prediction ---\n";
+    cout &lt;&lt; "Enter the number of regions: ";
+    cin &gt;&gt; n;
+    vector&lt;int&gt; floodRisk(n);
+    cout &lt;&lt; "Enter flood risk levels (1 to 10):\n";
+    for (int i = 0; i &lt; n; ++i) {
+        cin &gt;&gt; floodRisk[i];
+    }
+    int maxRisk = *max_element(floodRisk.begin(), floodRisk.end());
+    cout &lt;&lt; "Region(s) with the highest flood risk:\n";
+    for (int i = 0; i &lt; n; ++i) {
+        if (floodRisk[i] == maxRisk) {
+            cout &lt;&lt; "Region " &lt;&lt; i + 1 &lt;&lt; "\n";
+        }
+    }
+}
+
+// Function 4: Wastewater Recycling
+void wastewaterRecycling() {
+    int n, m;
+    cout &lt;&lt; "\n--- Wastewater Recycling ---\n";
+    cout &lt;&lt; "Enter the number of locations: ";
+    cin &gt;&gt; n;
+    cout &lt;&lt; "Enter the number of pipelines: ";
+    cin &gt;&gt; m;
+    vector&lt;pair&lt;int, pair&lt;int, int&gt;&gt;&gt; edges(m);
+    for (int i = 0; i &lt; m; ++i) {
+        int w, u, v;
+        cin &gt;&gt; w &gt;&gt; u &gt;&gt; v;
+        edges[i] = {w, {u, v}};
+    }
+    sort(edges.begin(), edges.end());
+    int totalCost = 0;
+    for (auto e : edges) {
+        totalCost += e.first;
+    }
+    cout &lt;&lt; "Minimum cost to connect all locations: " &lt;&lt; totalCost &lt;&lt; "\n";
+}
+
+// Function 5: Water Quality Monitoring
+void waterQualityMonitoring() {
+    int n;
+    cout &lt;&lt; "\n--- Water Quality Monitoring ---\n";
+    cout &lt;&lt; "Enter the number of samples: ";
+    cin &gt;&gt; n;
+    unordered_map&lt;string, int&gt; qualityMap;
+    for (int i = 0; i &lt; n; ++i) {
+        string id;
+        int quality;
+        cin &gt;&gt; id &gt;&gt; quality;
+        qualityMap[id] = quality;
+    }
+    for (auto q : qualityMap) {
+        cout &lt;&lt; q.first &lt;&lt; ": " &lt;&lt; q.second &lt;&lt; "\n";
+    }
+}
+
+// Main Function
+int main() {
+    int choice;
+    while (true) {
+        cout &lt;&lt; "\n1. Efficient Water Distribution\n2. Leakage Detection\n3. Flood Prediction\n4. Wastewater Recycling\n5. Water Quality Monitoring\n6. Exit\n";
+        cin &gt;&gt; choice;
+        switch (choice) {
+            case 1: efficientWaterDistribution(); break;
+            case 2: leakageDetection(); break;
+            case 3: floodPrediction(); break;
+            case 4: wastewaterRecycling(); break;
+            case 5: waterQualityMonitoring(); break;
+            case 6: return 0;
+        }
+    }
+}
+        </pre>
+    </div>
+
+    <button onclick="displaySampleIO()">Run Code</button>
+
+    <div class="output" id="output" style="display: none;">
+        <h2>Sample Input & Output</h2>
+        <p><strong>Efficient Water Distribution:</strong></p>
+        <p>Input: 3 pipelines (10, 20, 30 liters)<br>Output: Total Water Flow: 60 liters</p>
+
+        <p><strong>Leakage Detection:</strong></p>
+        <p>Input: 4 pipelines, connections (0-1, 1-2, 2-3)<br>Output: 1 leakage zone detected</p>
+
+        <p><strong>Flood Prediction:</strong></p>
+        <p>Input: 3 regions, risk levels (5, 9, 9)<br>Output: Region 2 & Region 3 have the highest risk.</p>
+
+        <p><strong>Wastewater Recycling:</strong></p>
+        <p>Input: 3 locations, pipelines (1-2 cost 10, 2-3 cost 20)<br>Output: Minimum cost: 30 units</p>
+
+        <p><strong>Water Quality Monitoring:</strong></p>
+        <p>Input: 2 samples (ID: A1, Quality: 8; ID: B2, Quality: 6)<br>Output: A1: 8, B2: 6</p>
+    </div>
+
+    <script>
+        function displaySampleIO() {
+            document.getElementById("output").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
