@@ -3,25 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buttons with Links</title>
+    <title>Design Analysis and Algorithm Course Portfolio</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            margin: 20px;
-            background: linear-gradient(to bottom right, #4facfe, #00f2fe);
+            margin: 0;
+            background: linear-gradient(to bottom right, #ff7e5f, #feb47b); /* Bright colorful gradient */
             color: #333;
             overflow-x: hidden;
         }
 
-        h1 {
+        h1, h2 {
             text-align: center;
-            color: #003366;
+            color: #ffffff;
             margin-bottom: 30px;
-            font-size: 2.8rem;
+            font-size: 3rem;
             text-transform: uppercase;
             letter-spacing: 3px;
             animation: fadeInDown 1.5s;
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: 2.2rem;
+            color: #f5f5f5;
+            animation: fadeInDown 1.8s;
         }
 
         @keyframes fadeInDown {
@@ -39,7 +46,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 25px;
+            gap: 30px;
             margin-top: 40px;
             animation: fadeIn 2s;
         }
@@ -53,6 +60,40 @@
             }
         }
 
+        .button {
+            background-color: #6a1b9a; /* Bright purple color */
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            text-align: center;
+            width: 220px;
+        }
+
+        .button:hover {
+            background-color: #9c27b0; /* Lighter purple for hover */
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .button a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .button a:hover {
+            text-decoration: none;
+        }
+
         .animation-section {
             display: flex;
             justify-content: center;
@@ -63,9 +104,9 @@
         }
 
         .animation-box {
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(to bottom right, #ff9a9e, #f6d02f); /* Pink to yellow gradient */
             border-radius: 50%;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             position: relative;
@@ -73,9 +114,9 @@
         }
 
         .laptop-icon-container {
-            width: 80px;
-            height: 80px;
-            background-color: #003366; /* Dark color for contrast */
+            width: 100px;
+            height: 100px;
+            background-color: #ff5722; /* Bright orange */
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -89,9 +130,9 @@
         }
 
         .laptop-icon {
-            width: 50px;
-            height: 50px;
-            fill: #ffffff; /* White color for the laptop SVG */
+            width: 60px;
+            height: 60px;
+            fill: #ffffff;
             animation: rotateLaptop 4s linear infinite;
         }
 
@@ -113,45 +154,11 @@
             }
         }
 
-        button {
-            background-color: #003366;
-            color: white;
-            border: none;
-            padding: 18px 35px;
-            border-radius: 30px;
-            cursor: pointer;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            font-size: 18px;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            width: 220px;
-            text-align: center;
-        }
-
-        button:hover {
-            background-color: #001f4d;
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        button a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-
-        button a:hover {
-            text-decoration: none;
-        }
-
         footer {
             margin-top: 50px;
             text-align: center;
-            font-size: 0.95rem;
-            color: #666;
+            font-size: 1rem;
+            color: #ffffff;
             animation: fadeInUp 1.5s;
         }
 
@@ -169,7 +176,7 @@
         .credits {
             margin-top: 10px;
             font-size: 0.85rem;
-            color: #555;
+            color: #f5f5f5;
         }
 
         /* Media Queries */
@@ -179,29 +186,24 @@
             }
 
             .button-container {
-                gap: 20px;
+                gap: 15px;
             }
 
-            button {
-                padding: 14px 28px;
+            .button {
+                padding: 16px 30px;
                 font-size: 16px;
-                width: 200px;
             }
         }
 
         @media (max-width: 768px) {
-            button {
-                padding: 12px 25px;
-                font-size: 14px;
-                width: 170px;
-            }
-
             h1 {
                 font-size: 2.2rem;
             }
 
-            .button-container {
-                gap: 20px;
+            .button {
+                padding: 14px 28px;
+                font-size: 14px;
+                width: 200px;
             }
 
             .animation-section {
@@ -209,8 +211,43 @@
             }
 
             .animation-box {
-                width: 150px;
+                width: 200px;
+                height: 200px;
+            }
+
+            .laptop-icon-container {
+                width: 80px;
+                height: 80px;
+            }
+
+            .laptop-icon {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            button {
+                padding: 12px 24px;
+                font-size: 12px;
+                width: 160px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .button-container {
+                gap: 10px;
+            }
+
+            .animation-section {
                 height: 150px;
+            }
+
+            .animation-box {
+                width: 120px;
+                height: 120px;
             }
 
             .laptop-icon-container {
@@ -223,60 +260,21 @@
                 height: 40px;
             }
         }
-
-        @media (max-width: 480px) {
-            button {
-                padding: 10px 20px;
-                font-size: 12px;
-                width: 140px;
-            }
-
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            .button-container {
-                gap: 15px;
-            }
-
-            .animation-section {
-                height: 150px;
-            }
-
-            .animation-box {
-                width: 100px;
-                height: 100px;
-            }
-
-            .laptop-icon-container {
-                width: 50px;
-                height: 50px;
-            }
-
-            .laptop-icon {
-                width: 30px;
-                height: 30px;
-            }
-        }
     </style>
 </head>
 <body>
 
-<h1>Explore the Sections</h1>
+<h1>Design Analysis and Algorithm Course Portfolio</h1>
+
+<h2>Explore the Course Components</h2>
 
 <div class="button-container">
-    <!-- Portfolio Button -->
-    <button><a href="portfolio.html" target="_blank">Portfolio</a></button>
-    <!--Course Overview button-->
-     <button><a href="course Overview.html" target="_blank">Course Overview</a></button>
-    <!--Team information button-->
-    <button><a href="Our Team.html">Team Information</a></button>
-    <!-- IT/BT Sector Button -->
-    <button><a href="Business cases/IT-BT Sector.html" target="_blank">Business Case Introduction</a></button>
-    <!--Business case implimentation button-->
-    <button><a href="Businessimplmentation-2">Business case Implimentation-1</a></button>
-    <!-- Course Reflection Button -->
-    <button><a href="cource reflection.html" target="_blank">Course Reflection</a></button>
+    <button class="button"><a href="portfolio.html" target="_blank">Portfolio</a></button>
+    <button class="button"><a href="course Overview.html" target="_blank">Course Overview</a></button>
+    <button class="button"><a href="Our Team.html">Team Information</a></button>
+    <button class="button"><a href="Business cases/IT-BT Sector.html" target="_blank">Business Case Introduction</a></button>
+    <button class="button"><a href="Businessimplmentation-2">Business Case Implementation</a></button>
+    <button class="button"><a href="course reflection.html" target="_blank">Course Reflection</a></button>
 </div>
 
 <div class="animation-section">
